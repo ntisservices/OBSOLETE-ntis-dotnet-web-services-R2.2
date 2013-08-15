@@ -7,18 +7,19 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>de522acb-ebc5-49cf-8c66-f9c053047c81</ProjectGuid>
+    <ProjectGuid>{D65C27C5-0B32-46F2-96B0-D2B0C6CCC919}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SubscriberWebService</RootNamespace>
     <AssemblyName>SubscriberWebService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,7 +39,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -58,9 +65,42 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="WebServiceSubscriber.svc" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contract\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AbstractDatexService.cs" />
+    <Compile Include="Services\AnprTrafficDataService.cs" />
+    <Compile Include="Services\AverageJourneyTimeService.cs" />
+    <Compile Include="Services\AverageSpeedFusedDataService.cs" />
+    <Compile Include="Services\AverageSpeedFvdService.cs" />
+    <Compile Include="Services\IAnprTrafficDataService.cs" />
+    <Compile Include="Services\IAverageJourneyTimeService.cs" />
+    <Compile Include="Services\IAverageSpeedFusedData.cs" />
+    <Compile Include="Services\IAverageSpeedFvdService.cs" />
+    <Compile Include="Services\IMidasTrafficDataService.cs" />
+    <Compile Include="Services\MidasTrafficDataService.cs" />
+    <Compile Include="Services\TrafficData.cs" />
+    <Compile Include="WebServiceSubscriber.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Contract\DATEXIISchema_2_2_0withdefinitions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Contract\DATEXII_NTISExtensions_1.0Beta1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Contract\subscriber.wsdl" />
+    <None Include="Contract\subscriber.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -73,17 +113,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
