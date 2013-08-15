@@ -18,24 +18,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 // THE SOFTWARE.
 
-using SubscriberWebService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.VisualStudio.TestTools.UnitTesting.Web;
 using Subscriber;
 using SubscriberWebService.Services;
 using System.Web.Services.Protocols;
 
+
 namespace SubscriberWebServiceTestProject
 {
-    
-    
+
+
     /// <summary>
     ///This is a test class for SubscriberServiceTest and is intended
     ///to contain all SubscriberServiceTest Unit Tests
     ///</summary>
     [TestClass()]
     public class SubscriberServiceTest
-    {        
+    {
         private TestContext testContextInstance;
         private static D2LogicalModel model;
         private static Exchange exchange;
@@ -87,7 +86,7 @@ namespace SubscriberWebServiceTestProject
             model.exchange.supplierIdentification.country = CountryEnum.gb;
             model.exchange.supplierIdentification.nationalIdentifier = "gb";
         }
-        
+
         //Use TestCleanup to run code after each test has run
         //[TestCleanup()]
         //public void MyTestCleanup()
@@ -96,7 +95,7 @@ namespace SubscriberWebServiceTestProject
         //
         #endregion
 
-        
+
         /// <summary>
         ///A test for GetDeliverMidasTrafficDataResponse
         ///</summary>
@@ -247,7 +246,7 @@ namespace SubscriberWebServiceTestProject
 
             Assert.AreEqual(expected, actual);
         }
-        
+
 
         /// <summary>
         ///A test for GetDeliverAnprTrafficDataResponse()

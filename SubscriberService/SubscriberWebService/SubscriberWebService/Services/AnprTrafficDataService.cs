@@ -19,11 +19,7 @@
 // THE SOFTWARE.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Subscriber;
-using log4net;
 using System.Web.Services.Protocols;
 
 namespace SubscriberWebService.Services

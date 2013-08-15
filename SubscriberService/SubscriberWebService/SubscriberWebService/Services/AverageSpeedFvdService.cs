@@ -19,16 +19,13 @@
 // THE SOFTWARE.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Subscriber;
 using log4net;
 using System.Web.Services.Protocols;
 
 namespace SubscriberWebService.Services
 {
-    public class AverageSpeedFvdService: AbstractDatexService, IAverageSpeedFvdService
+    public class AverageSpeedFvdService : AbstractDatexService, IAverageSpeedFvdService
     {
         #region IAverageSpeedFvdService Members
         protected static readonly ILog log = LogManager.GetLogger(typeof(AverageSpeedFvdService));
@@ -38,7 +35,6 @@ namespace SubscriberWebService.Services
             log.Info("New DeliverAverageSpeedFvdRequest received.");
 
             D2LogicalModel d2LogicalModel = deliverAverageSpeedFvdRequest.D2LogicalModel;
-            FusedDataPublication fusedDataPublication = null;
 
             // Validate D2LogicalModel
             if (!ExampleDataCheckOk(d2LogicalModel))
@@ -49,14 +45,14 @@ namespace SubscriberWebService.Services
             // FusedDataPublication contains the journeytime, direction, code, region, etc.
             try
             {
-                fusedDataPublication = (FusedDataPublication)d2LogicalModel.payloadPublication;
+                FusedDataPublication fusedDataPublication = (FusedDataPublication)d2LogicalModel.payloadPublication;
 
                 if (fusedDataPublication != null && fusedDataPublication.fusedData[0] != null)
                 {
                     // You could use the FusedDataPublication and extract the corresponding fields.
                     log.Debug("createdUtc is " + fusedDataPublication.fusedData[0].createdUtc.ToString());
                     log.Debug("Local is " + fusedDataPublication.fusedData[0].markets[0].createdLocal.ToString());
-                    
+
                 }
             }
             catch (Exception e)
@@ -68,7 +64,7 @@ namespace SubscriberWebService.Services
 
             DeliverAverageSpeedFvdResponse response = new DeliverAverageSpeedFvdResponse();
             response.status = "DeliverAverageSpeedFvdRequest: Successful Delivery";
-            
+
             return response;
         }
 
