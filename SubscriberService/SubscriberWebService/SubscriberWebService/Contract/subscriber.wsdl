@@ -148,7 +148,7 @@
   </wsdl:binding>
   <wsdl:service name="subscriberService">
     <wsdl:port binding="tns:subscriberSoap11" name="subscriberSoap11">
-      <soap:address location="http://localhost/SubscriberService"/>
+      <soap:address location="http://localhost/WebServiceSubscriber.svc"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

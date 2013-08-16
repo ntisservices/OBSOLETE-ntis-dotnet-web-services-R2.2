@@ -86,7 +86,9 @@
     <Compile Include="Services\MidasTrafficDataService.cs" />
     <Compile Include="Services\TMUTrafficDataService.cs" />
     <Compile Include="Services\TrafficData.cs" />
-    <Compile Include="WebServiceSubscriber.cs" />
+    <Compile Include="WebServiceSubscriber.svc.cs">
+      <DependentUpon>WebServiceSubscriber.svc</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">

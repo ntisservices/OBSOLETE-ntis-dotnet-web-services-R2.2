@@ -21,8 +21,8 @@ namespace SubscriberWebService.Services
                 SiteMeasurements[] siteMeasurementsArray = measuredDataPublication.siteMeasurements;
                 foreach (SiteMeasurements siteMeasurements in siteMeasurementsArray)
                 {
-                    SiteMeasurementsIndexMeasuredValue[] measuredValueArray = siteMeasurements.measuredValue;
-                    foreach (SiteMeasurementsIndexMeasuredValue siteMeasurementsIndexMeasuredValue in measuredValueArray)
+                    _SiteMeasurementsIndexMeasuredValue[] measuredValueArray = siteMeasurements.measuredValue;
+                    foreach (_SiteMeasurementsIndexMeasuredValue siteMeasurementsIndexMeasuredValue in measuredValueArray)
                     {
                         MeasuredValue measuredValue = siteMeasurementsIndexMeasuredValue.measuredValue;
                         BasicData basicData = measuredValue.basicData;

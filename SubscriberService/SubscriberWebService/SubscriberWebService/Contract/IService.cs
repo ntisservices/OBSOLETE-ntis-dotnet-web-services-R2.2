@@ -26087,7 +26087,7 @@ namespace SubscriberWebService
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class SiteMeasurementsIndexMeasuredValue
+    public partial class _SiteMeasurementsIndexMeasuredValue
     {
         
         private MeasuredValue measuredValueField;
@@ -26136,7 +26136,7 @@ namespace SubscriberWebService
         
         private System.DateTime measurementTimeDefaultField;
         
-        private SiteMeasurementsIndexMeasuredValue[] measuredValueField;
+        private _SiteMeasurementsIndexMeasuredValue[] measuredValueField;
         
         private _ExtensionType siteMeasurementsExtensionField;
         
@@ -26170,7 +26170,7 @@ namespace SubscriberWebService
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("measuredValue", Order=2)]
-        public SiteMeasurementsIndexMeasuredValue[] measuredValue
+        public _SiteMeasurementsIndexMeasuredValue[] measuredValue
         {
             get
             {

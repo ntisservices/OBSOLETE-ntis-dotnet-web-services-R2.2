@@ -64,7 +64,7 @@ namespace SubscriberWebService.Services
                         log.Debug("measurementDataPublication time default is " + siteMeasurement.measurementTimeDefault.ToString());
 
                         // Cycle through the MeasuredValues to get the individual sensor readings for a MIDAS site.
-                        foreach (SiteMeasurementsIndexMeasuredValue singleMeasuredValue in siteMeasurement.measuredValue)
+                        foreach (_SiteMeasurementsIndexMeasuredValue singleMeasuredValue in siteMeasurement.measuredValue)
                         {
                             int index = singleMeasuredValue.index;
 

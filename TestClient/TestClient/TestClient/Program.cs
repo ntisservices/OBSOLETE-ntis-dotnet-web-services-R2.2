@@ -1,5 +1,10 @@
 ﻿using System;
-using TestClient.SubscriberServiceReference;
+using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel;
+using System.Text;
+using System.Reflection;
+using TestClient.ServiceReference1;
 
 namespace TestClient
 {
@@ -7,26 +12,27 @@ namespace TestClient
     {
         static void Main(string[] args)
         {
-            SubscriberServiceReference.DeliverANPRTrafficDataRequest request = new SubscriberServiceReference.DeliverANPRTrafficDataRequest();
-            SubscriberServiceReference.D2LogicalModel model = new SubscriberServiceReference.D2LogicalModel();
+            DeliverANPRTrafficDataRequest request = new DeliverANPRTrafficDataRequest();
+            D2LogicalModel model = new D2LogicalModel();
 
             //request.D2LogicalModel = new TestClient.SubscriberServiceReference.D2LogicalModel();
             
             model.modelBaseVersion = "2";
-            model.exchange = new SubscriberServiceReference.Exchange();
-            model.exchange.supplierIdentification = new SubscriberServiceReference.InternationalIdentifier();
-            model.exchange.supplierIdentification.country = SubscriberServiceReference.CountryEnum.gb;
+            model.exchange = new Exchange();
+            model.exchange.supplierIdentification = new InternationalIdentifier();
+            model.exchange.supplierIdentification.country = CountryEnum.gb;
             model.exchange.supplierIdentification.nationalIdentifier = "gb";
 
             request.D2LogicalModel = model;
-            
-            subscriberSoap11Client client = new TestClient.SubscriberServiceReference.subscriberSoap11Client();
-            DeliverANPRTrafficDataResponse response = new TestClient.SubscriberServiceReference.DeliverANPRTrafficDataResponse();
+
+            subscriberClient client = new subscriberClient();
+            DeliverANPRTrafficDataResponse response = new DeliverANPRTrafficDataResponse();
 
             // call service and get response;
             try
             {
                 response = client.DeliverANPRTrafficData(request);
+                
             }
             catch (Exception ex)
             {
