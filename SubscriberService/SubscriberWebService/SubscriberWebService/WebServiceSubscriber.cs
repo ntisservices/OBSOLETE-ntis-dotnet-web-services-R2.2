@@ -1,15 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using log4net;
+using SubscriberWebService.Services;
 
 namespace SubscriberWebService
 {
-    public class WebServiceSubscriber : subscriberSoap11
+
+    public class WebServiceSubscriber : IWebServiceSubscriber
     {
+        protected static readonly ILog log = LogManager.GetLogger(typeof(WebServiceSubscriber));
+
         public DeliverAverageSpeedFvdResponse1 DeliverAverageSpeedFvd(DeliverAverageSpeedFvdRequest1 request)
         {
-            throw new NotImplementedException();
+            AverageSpeedFvdService averageSpeedFvdService = new AverageSpeedFvdService();
+            log4net.Config.XmlConfigurator.Configure();
+            log.Info("Deliver average speed FVD request received");
+            DeliverAverageSpeedFvdResponse response = averageSpeedFvdService.GetDeliverAverageSpeedFvdResponse(request.DeliverAverageSpeedFvdRequest);
+            return new DeliverAverageSpeedFvdResponse1(response);
         }
 
         public DeliverMIDASTrafficDataResponse1 DeliverMIDASTrafficData(DeliverMIDASTrafficDataRequest1 request)

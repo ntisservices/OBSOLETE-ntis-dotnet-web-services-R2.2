@@ -85,16 +85,6 @@
     <Compile Include="WebServiceSubscriber.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Contract\DATEXIISchema_2_2_0withdefinitions.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Contract\DATEXII_NTISExtensions_1.0Beta1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Contract\subscriber.wsdl" />
-    <None Include="Contract\subscriber.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,153 +1,131 @@
-<?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.thalesgroup.com/NTIS/SubscriberService" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.thalesgroup.com/NTIS/SubscriberService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://www.thalesgroup.com/NTIS/SubscriberService" xmlns:sch1="http://datex2.eu/schema/2/2_0" xmlns:sch2="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.thalesgroup.com/NTIS/SubscriberService" targetNamespace="http://www.thalesgroup.com/NTIS/SubscriberService">
+  <wsdl:import namespace="http://www.thalesgroup.com/NTIS/SubscriberService" location="subscriber.xsd" />
   <wsdl:types>
   </wsdl:types>
-  <wsdl:message name="DeliverAverageSpeedFvdSoapIn">
-    <wsdl:part name="DeliverAverageSpeedFvdRequest" element="tns:DeliverAverageSpeedFvdRequest" />
+  <wsdl:message name="DeliverAverageSpeedFvdRequest">
+    <wsdl:part element="tns:DeliverAverageSpeedFvdRequest" name="DeliverAverageSpeedFvdRequest">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="DeliverAverageSpeedFvdSoapOut">
-    <wsdl:part name="DeliverAverageSpeedFvdResult" element="tns:DeliverAverageSpeedFvdResponse" />
+  <wsdl:message name="DeliverMIDASTrafficDataResponse">
+    <wsdl:part element="tns:DeliverMIDASTrafficDataResponse" name="DeliverMIDASTrafficDataResponse">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="DeliverMIDASTrafficDataSoapIn">
-    <wsdl:part name="DeliverMIDASTrafficDataRequest" element="tns:DeliverMIDASTrafficDataRequest" />
+  <wsdl:message name="DeliverANPRTrafficDataRequest">
+    <wsdl:part element="tns:DeliverANPRTrafficDataRequest" name="DeliverANPRTrafficDataRequest">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="DeliverMIDASTrafficDataSoapOut">
-    <wsdl:part name="DeliverMIDASTrafficDataResult" element="tns:DeliverMIDASTrafficDataResponse" />
+  <wsdl:message name="DeliverAverageSpeedFvdResponse">
+    <wsdl:part element="tns:DeliverAverageSpeedFvdResponse" name="DeliverAverageSpeedFvdResponse">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="DeliverANPRTrafficDataSoapIn">
-    <wsdl:part name="DeliverANPRTrafficDataRequest" element="tns:DeliverANPRTrafficDataRequest" />
+  <wsdl:message name="DeliverANPRTrafficDataResponse">
+    <wsdl:part element="tns:DeliverANPRTrafficDataResponse" name="DeliverANPRTrafficDataResponse">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="DeliverANPRTrafficDataSoapOut">
-    <wsdl:part name="DeliverANPRTrafficDataResult" element="tns:DeliverANPRTrafficDataResponse" />
+  <wsdl:message name="DeliverAverageSpeedFusedDataRequest">
+    <wsdl:part element="tns:DeliverAverageSpeedFusedDataRequest" name="DeliverAverageSpeedFusedDataRequest">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="DeliverAverageSpeedFusedDataSoapIn">
-    <wsdl:part name="DeliverAverageSpeedFusedDataRequest" element="tns:DeliverAverageSpeedFusedDataRequest" />
+  <wsdl:message name="DeliverMIDASTrafficDataRequest">
+    <wsdl:part element="tns:DeliverMIDASTrafficDataRequest" name="DeliverMIDASTrafficDataRequest">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="DeliverAverageSpeedFusedDataSoapOut">
-    <wsdl:part name="DeliverAverageSpeedFusedDataResult" element="tns:DeliverAverageSpeedFusedDataResponse" />
+  <wsdl:message name="DeliverAverageJourneyTimeResponse">
+    <wsdl:part element="tns:DeliverAverageJourneyTimeResponse" name="DeliverAverageJourneyTimeResponse">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="DeliverAverageJourneyTimeSoapIn">
-    <wsdl:part name="DeliverAverageJourneyTimeRequest" element="tns:DeliverAverageJourneyTimeRequest" />
+  <wsdl:message name="DeliverAverageSpeedFusedDataResponse">
+    <wsdl:part element="tns:DeliverAverageSpeedFusedDataResponse" name="DeliverAverageSpeedFusedDataResponse">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="DeliverAverageJourneyTimeSoapOut">
-    <wsdl:part name="DeliverAverageJourneyTimeResult" element="tns:DeliverAverageJourneyTimeResponse" />
+  <wsdl:message name="DeliverAverageJourneyTimeRequest">
+    <wsdl:part element="tns:DeliverAverageJourneyTimeRequest" name="DeliverAverageJourneyTimeRequest">
+    </wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="subscriberSoap11">
+  <wsdl:portType name="subscriber">
     <wsdl:operation name="DeliverAverageSpeedFvd">
-      <wsdl:input message="tns:DeliverAverageSpeedFvdSoapIn" />
-      <wsdl:output message="tns:DeliverAverageSpeedFvdSoapOut" />
+      <wsdl:input message="tns:DeliverAverageSpeedFvdRequest" name="DeliverAverageSpeedFvdRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeliverAverageSpeedFvdResponse" name="DeliverAverageSpeedFvdResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeliverMIDASTrafficData">
-      <wsdl:input message="tns:DeliverMIDASTrafficDataSoapIn" />
-      <wsdl:output message="tns:DeliverMIDASTrafficDataSoapOut" />
+      <wsdl:input message="tns:DeliverMIDASTrafficDataRequest" name="DeliverMIDASTrafficDataRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeliverMIDASTrafficDataResponse" name="DeliverMIDASTrafficDataResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeliverANPRTrafficData">
-      <wsdl:input message="tns:DeliverANPRTrafficDataSoapIn" />
-      <wsdl:output message="tns:DeliverANPRTrafficDataSoapOut" />
+      <wsdl:input message="tns:DeliverANPRTrafficDataRequest" name="DeliverANPRTrafficDataRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeliverANPRTrafficDataResponse" name="DeliverANPRTrafficDataResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeliverAverageSpeedFusedData">
-      <wsdl:input message="tns:DeliverAverageSpeedFusedDataSoapIn" />
-      <wsdl:output message="tns:DeliverAverageSpeedFusedDataSoapOut" />
+      <wsdl:input message="tns:DeliverAverageSpeedFusedDataRequest" name="DeliverAverageSpeedFusedDataRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeliverAverageSpeedFusedDataResponse" name="DeliverAverageSpeedFusedDataResponse">
+    </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeliverAverageJourneyTime">
-      <wsdl:input message="tns:DeliverAverageJourneyTimeSoapIn" />
-      <wsdl:output message="tns:DeliverAverageJourneyTimeSoapOut" />
+      <wsdl:input message="tns:DeliverAverageJourneyTimeRequest" name="DeliverAverageJourneyTimeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeliverAverageJourneyTimeResponse" name="DeliverAverageJourneyTimeResponse">
+    </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="subscriberSoap11" type="tns:subscriberSoap11">
-    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+  <wsdl:binding name="subscriberSoap11" type="tns:subscriber">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="DeliverAverageSpeedFvd">
-      <soap:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageSpeedFvd" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
+      <soap:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageSpeedFvd"/>
+      <wsdl:input name="DeliverAverageSpeedFvdRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
+      <wsdl:output name="DeliverAverageSpeedFvdResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeliverMIDASTrafficData">
-      <soap:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverMIDASTrafficData" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
+      <soap:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverMIDASTrafficData"/>
+      <wsdl:input name="DeliverMIDASTrafficDataRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
+      <wsdl:output name="DeliverMIDASTrafficDataResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeliverANPRTrafficData">
-      <soap:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverANPRTrafficData" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
+      <soap:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverANPRTrafficData"/>
+      <wsdl:input name="DeliverANPRTrafficDataRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
+      <wsdl:output name="DeliverANPRTrafficDataResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeliverAverageSpeedFusedData">
-      <soap:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageSpeedFusedData" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
+      <soap:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageSpeedFusedData"/>
+      <wsdl:input name="DeliverAverageSpeedFusedDataRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
+      <wsdl:output name="DeliverAverageSpeedFusedDataResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeliverAverageJourneyTime">
-      <soap:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageJourneyTime" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
+      <soap:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageJourneyTime"/>
+      <wsdl:input name="DeliverAverageJourneyTimeRequest">
+        <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
+      <wsdl:output name="DeliverAverageJourneyTimeResponse">
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="subscriberSoap" type="tns:subscriberSoap">
-    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="DeliverAverageSpeedFvd">
-      <soap12:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageSpeedFvd" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeliverMIDASTrafficData">
-      <soap12:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverMIDASTrafficData" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeliverANPRTrafficData">
-      <soap12:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverANPRTrafficData" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeliverAverageSpeedFusedData">
-      <soap12:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageSpeedFusedData" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeliverAverageJourneyTime">
-      <soap12:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageJourneyTime" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
+  <wsdl:service name="subscriberService">
+    <wsdl:port binding="tns:subscriberSoap11" name="subscriberSoap11">
+      <soap:address location="http://localhost/SubscriberService"/>
+    </wsdl:port>
+  </wsdl:service>
 </wsdl:definitions>

@@ -13,39 +13,39 @@ namespace SubscriberWebService
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.thalesgroup.com/NTIS/SubscriberService", ConfigurationName="SubscriberWebService.subscriberSoap11")]
-    public interface subscriberSoap11
+    [System.ServiceModel.ServiceContractAttribute(Namespace = "http://www.thalesgroup.com/NTIS/SubscriberService", ConfigurationName = "SubscriberWebService.IWebServiceSubscriber")]
+    public interface IWebServiceSubscriber
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageSpeedFvd")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageSpeedFvd", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataValue))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Fault))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(TpegDescriptor))]
         SubscriberWebService.DeliverAverageSpeedFvdResponse1 DeliverAverageSpeedFvd(SubscriberWebService.DeliverAverageSpeedFvdRequest1 request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverMIDASTrafficData")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverMIDASTrafficData", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataValue))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Fault))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(TpegDescriptor))]
         SubscriberWebService.DeliverMIDASTrafficDataResponse1 DeliverMIDASTrafficData(SubscriberWebService.DeliverMIDASTrafficDataRequest1 request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverANPRTrafficData")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverANPRTrafficData", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataValue))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Fault))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(TpegDescriptor))]
         SubscriberWebService.DeliverANPRTrafficDataResponse1 DeliverANPRTrafficData(SubscriberWebService.DeliverANPRTrafficDataRequest1 request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageSpeedFusedData")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageSpeedFusedData", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataValue))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Fault))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(TpegDescriptor))]
         SubscriberWebService.DeliverAverageSpeedFusedDataResponse1 DeliverAverageSpeedFusedData(SubscriberWebService.DeliverAverageSpeedFusedDataRequest1 request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageJourneyTime")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageJourneyTime", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataValue))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Fault))]
@@ -28388,6 +28388,66 @@ namespace SubscriberWebService
         public DeliverAverageJourneyTimeResponse1(SubscriberWebService.DeliverAverageJourneyTimeResponse DeliverAverageJourneyTimeResponse)
         {
             this.DeliverAverageJourneyTimeResponse = DeliverAverageJourneyTimeResponse;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface subscriberChannel : SubscriberWebService.IWebServiceSubscriber, System.ServiceModel.IClientChannel
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class subscriberClient : System.ServiceModel.ClientBase<SubscriberWebService.IWebServiceSubscriber>, SubscriberWebService.IWebServiceSubscriber
+    {
+        
+        public subscriberClient()
+        {
+        }
+        
+        public subscriberClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName)
+        {
+        }
+        
+        public subscriberClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress)
+        {
+        }
+        
+        public subscriberClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress)
+        {
+        }
+        
+        public subscriberClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress)
+        {
+        }
+        
+        public SubscriberWebService.DeliverAverageSpeedFvdResponse1 DeliverAverageSpeedFvd(SubscriberWebService.DeliverAverageSpeedFvdRequest1 request)
+        {
+            return base.Channel.DeliverAverageSpeedFvd(request);
+        }
+        
+        public SubscriberWebService.DeliverMIDASTrafficDataResponse1 DeliverMIDASTrafficData(SubscriberWebService.DeliverMIDASTrafficDataRequest1 request)
+        {
+            return base.Channel.DeliverMIDASTrafficData(request);
+        }
+        
+        public SubscriberWebService.DeliverANPRTrafficDataResponse1 DeliverANPRTrafficData(SubscriberWebService.DeliverANPRTrafficDataRequest1 request)
+        {
+            return base.Channel.DeliverANPRTrafficData(request);
+        }
+        
+        public SubscriberWebService.DeliverAverageSpeedFusedDataResponse1 DeliverAverageSpeedFusedData(SubscriberWebService.DeliverAverageSpeedFusedDataRequest1 request)
+        {
+            return base.Channel.DeliverAverageSpeedFusedData(request);
+        }
+        
+        public SubscriberWebService.DeliverAverageJourneyTimeResponse1 DeliverAverageJourneyTime(SubscriberWebService.DeliverAverageJourneyTimeRequest1 request)
+        {
+            return base.Channel.DeliverAverageJourneyTime(request);
         }
     }
 }
