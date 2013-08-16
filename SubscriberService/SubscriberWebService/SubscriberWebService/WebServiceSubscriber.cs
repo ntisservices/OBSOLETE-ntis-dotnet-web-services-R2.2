@@ -9,64 +9,64 @@ namespace SubscriberWebService
     {
         protected static readonly ILog log = LogManager.GetLogger(typeof(WebServiceSubscriber));
 
-        public DeliverAverageSpeedFvdResponse1 DeliverAverageSpeedFvd(DeliverAverageSpeedFvdRequest1 request)
+        public DeliverAverageSpeedFvdResponseContainer DeliverAverageSpeedFvd(DeliverAverageSpeedFvdRequestContainer container)
         {
             AverageSpeedFvdService averageSpeedFvdService = new AverageSpeedFvdService();
             log4net.Config.XmlConfigurator.Configure();
             log.Info("Deliver average speed FVD request received");
-            DeliverAverageSpeedFvdResponse response = averageSpeedFvdService.GetDeliverAverageSpeedFvdResponse(request.DeliverAverageSpeedFvdRequest);
-            return new DeliverAverageSpeedFvdResponse1(response);
+            DeliverAverageSpeedFvdResponse response = averageSpeedFvdService.GetDeliverAverageSpeedFvdResponse(container.DeliverAverageSpeedFvdRequest);
+            return new DeliverAverageSpeedFvdResponseContainer(response);
         }
 
-        public DeliverMIDASTrafficDataResponse1 DeliverMIDASTrafficData(DeliverMIDASTrafficDataRequest1 request)
+        public DeliverMIDASTrafficDataResponseContainer DeliverMIDASTrafficData(DeliverMIDASTrafficDataRequestContainer container)
         {
             MidasTrafficDataService midasTrafficDataService = new MidasTrafficDataService();
             log4net.Config.XmlConfigurator.Configure();
             log.Info("Deliver MIDAS traffic data request received");
-            DeliverMIDASTrafficDataResponse response = midasTrafficDataService.GetDeliverMidasTrafficDataResponse(request.DeliverMIDASTrafficDataRequest);
-            return new DeliverMIDASTrafficDataResponse1(response);
+            DeliverMIDASTrafficDataResponse response = midasTrafficDataService.GetDeliverMidasTrafficDataResponse(container.DeliverMIDASTrafficDataRequest);
+            return new DeliverMIDASTrafficDataResponseContainer(response);
         }
 
-        public DeliverANPRTrafficDataResponse1 DeliverANPRTrafficData(DeliverANPRTrafficDataRequest1 request)
+        public DeliverANPRTrafficDataResponseContainer DeliverANPRTrafficData(DeliverANPRTrafficDataRequestContainer container)
         {
             AnprTrafficDataService anprTrafficDataService = new AnprTrafficDataService();
             log4net.Config.XmlConfigurator.Configure();
             log.Info("Deliver ANPR traffic data request received");
-            DeliverANPRTrafficDataResponse response = anprTrafficDataService.GetDeliverAnprTrafficDataResponse(request.DeliverANPRTrafficDataRequest);
+            DeliverANPRTrafficDataResponse response = anprTrafficDataService.GetDeliverAnprTrafficDataResponse(container.DeliverANPRTrafficDataRequest);
 
-            return new DeliverANPRTrafficDataResponse1(response);
+            return new DeliverANPRTrafficDataResponseContainer(response);
         }
 
-        public DeliverAverageSpeedFusedDataResponse1 DeliverAverageSpeedFusedData(DeliverAverageSpeedFusedDataRequest1 request)
+        public DeliverAverageSpeedFusedDataResponseContainer DeliverAverageSpeedFusedData(DeliverAverageSpeedFusedDataRequestContainer container)
         {
             AverageSpeedFusedDataService averageSpeedFusedDataService = new AverageSpeedFusedDataService();
             log4net.Config.XmlConfigurator.Configure();
             log.Info("Deliver average speed fused data request received");
-            DeliverAverageSpeedFusedDataResponse response = averageSpeedFusedDataService.GetDeliverAverageSpeedFusedDataResponse(request.DeliverAverageSpeedFusedDataRequest);
+            DeliverAverageSpeedFusedDataResponse response = averageSpeedFusedDataService.GetDeliverAverageSpeedFusedDataResponse(container.DeliverAverageSpeedFusedDataRequest);
 
-            return new DeliverAverageSpeedFusedDataResponse1(response);
+            return new DeliverAverageSpeedFusedDataResponseContainer(response);
         }
 
-        public DeliverAverageJourneyTimeResponse1 DeliverAverageJourneyTime(DeliverAverageJourneyTimeRequest1 request)
+        public DeliverAverageJourneyTimeResponseContainer DeliverAverageJourneyTime(DeliverAverageJourneyTimeRequestContainer container)
         {
             AverageJourneyTimeService averageJourneyTimeService = new AverageJourneyTimeService();
             log4net.Config.XmlConfigurator.Configure();
             log.Info("Deliver average journey time request received");
-            DeliverAverageJourneyTimeResponse response = averageJourneyTimeService.GetDeliverAverageJourneyTimeResponse(request.DeliverAverageJourneyTimeRequest);
+            DeliverAverageJourneyTimeResponse response = averageJourneyTimeService.GetDeliverAverageJourneyTimeResponse(container.DeliverAverageJourneyTimeRequest);
 
-            return new DeliverAverageJourneyTimeResponse1(response);
+            return new DeliverAverageJourneyTimeResponseContainer(response);
         }
 
 
-        public DeliverTMUTrafficDataResponse1 DeliverTMUTrafficData(DeliverTMUTrafficDataRequest1 request)
+        public DeliverTMUTrafficDataResponseContainer DeliverTMUTrafficData(DeliverTMUTrafficDataRequestContainer container)
         {
             TMUTrafficDataService tmuTrafficDataService = new TMUTrafficDataService();
             log4net.Config.XmlConfigurator.Configure();
             log.Info("Deliver TMU Traffic Data request received");
             DeliverTMUTrafficDataResponse response =
-                tmuTrafficDataService.GetDeliverTMUTrafficDataResponse(request.DeliverTMUTrafficDataRequest);
+                tmuTrafficDataService.GetDeliverTMUTrafficDataResponse(container.DeliverTMUTrafficDataRequest);
 
-            return new DeliverTMUTrafficDataResponse1(response);
+            return new DeliverTMUTrafficDataResponseContainer(response);
         }
     }
 }

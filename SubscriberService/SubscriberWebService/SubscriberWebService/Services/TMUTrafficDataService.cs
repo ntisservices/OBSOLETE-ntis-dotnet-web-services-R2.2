@@ -26,6 +26,7 @@ namespace SubscriberWebService.Services
                     {
                         MeasuredValue measuredValue = siteMeasurementsIndexMeasuredValue.measuredValue;
                         BasicData basicData = measuredValue.basicData;
+
                         if (basicData is TrafficFlow)
                         {
                             VehicleFlowValue value = ((TrafficFlow)basicData).vehicleFlow;
