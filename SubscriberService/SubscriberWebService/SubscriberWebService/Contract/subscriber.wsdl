@@ -42,7 +42,15 @@
   <wsdl:message name="DeliverAverageJourneyTimeRequest">
     <wsdl:part element="tns:DeliverAverageJourneyTimeRequest" name="DeliverAverageJourneyTimeRequest">
     </wsdl:part>
-  </wsdl:message>
+  </wsdl:message>  
+    <wsdl:message name="DeliverTMUTrafficDataRequest">
+    <wsdl:part element="tns:DeliverTMUTrafficDataRequest" name="DeliverTMUTrafficDataRequest">
+    </wsdl:part>
+  </wsdl:message>  
+    <wsdl:message name="DeliverTMUTrafficDataResponse">
+    <wsdl:part element="tns:DeliverTMUTrafficDataResponse" name="DeliverTMUTrafficDataResponse">
+    </wsdl:part>
+  </wsdl:message>  
   <wsdl:portType name="subscriber">
     <wsdl:operation name="DeliverAverageSpeedFvd">
       <wsdl:input message="tns:DeliverAverageSpeedFvdRequest" name="DeliverAverageSpeedFvdRequest">
@@ -72,6 +80,12 @@
       <wsdl:input message="tns:DeliverAverageJourneyTimeRequest" name="DeliverAverageJourneyTimeRequest">
     </wsdl:input>
       <wsdl:output message="tns:DeliverAverageJourneyTimeResponse" name="DeliverAverageJourneyTimeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+	    <wsdl:operation name="DeliverTMUTrafficData">
+      <wsdl:input message="tns:DeliverTMUTrafficDataRequest" name="DeliverTMUTrafficDataRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:DeliverTMUTrafficDataResponse" name="DeliverTMUTrafficDataResponse">
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
@@ -119,6 +133,15 @@
         <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output name="DeliverAverageJourneyTimeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+	    <wsdl:operation name="DeliverTMUTrafficData">
+      <soap:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverTMUTrafficData"/>
+      <wsdl:input name="DeliverTMUTrafficDataRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeliverTMUTrafficDataResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>

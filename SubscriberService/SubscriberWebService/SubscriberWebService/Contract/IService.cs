@@ -51,6 +51,13 @@ namespace SubscriberWebService
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Fault))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(TpegDescriptor))]
         SubscriberWebService.DeliverAverageJourneyTimeResponse1 DeliverAverageJourneyTime(SubscriberWebService.DeliverAverageJourneyTimeRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverTMUTrafficData", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataValue))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Fault))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(TpegDescriptor))]
+        SubscriberWebService.DeliverTMUTrafficDataResponse1 DeliverTMUTrafficData(SubscriberWebService.DeliverTMUTrafficDataRequest1 request);
     }
     
     /// <remarks/>
@@ -26080,7 +26087,7 @@ namespace SubscriberWebService
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datex2.eu/schema/2/2_0")]
-    public partial class _SiteMeasurementsIndexMeasuredValue
+    public partial class SiteMeasurementsIndexMeasuredValue
     {
         
         private MeasuredValue measuredValueField;
@@ -26129,7 +26136,7 @@ namespace SubscriberWebService
         
         private System.DateTime measurementTimeDefaultField;
         
-        private _SiteMeasurementsIndexMeasuredValue[] measuredValueField;
+        private SiteMeasurementsIndexMeasuredValue[] measuredValueField;
         
         private _ExtensionType siteMeasurementsExtensionField;
         
@@ -26163,7 +26170,7 @@ namespace SubscriberWebService
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("measuredValue", Order=2)]
-        public _SiteMeasurementsIndexMeasuredValue[] measuredValue
+        public SiteMeasurementsIndexMeasuredValue[] measuredValue
         {
             get
             {
@@ -28391,6 +28398,95 @@ namespace SubscriberWebService
         }
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.thalesgroup.com/NTIS/SubscriberService")]
+    public partial class DeliverTMUTrafficDataRequest
+    {
+        
+        private D2LogicalModel d2LogicalModelField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public D2LogicalModel d2LogicalModel
+        {
+            get
+            {
+                return this.d2LogicalModelField;
+            }
+            set
+            {
+                this.d2LogicalModelField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.thalesgroup.com/NTIS/SubscriberService")]
+    public partial class DeliverTMUTrafficDataResponse
+    {
+        
+        private string statusField;
+        
+        /// <remarks/>
+        public string status
+        {
+            get
+            {
+                return this.statusField;
+            }
+            set
+            {
+                this.statusField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeliverTMUTrafficDataRequest1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.thalesgroup.com/NTIS/SubscriberService", Order=0)]
+        public SubscriberWebService.DeliverTMUTrafficDataRequest DeliverTMUTrafficDataRequest;
+        
+        public DeliverTMUTrafficDataRequest1()
+        {
+        }
+        
+        public DeliverTMUTrafficDataRequest1(SubscriberWebService.DeliverTMUTrafficDataRequest DeliverTMUTrafficDataRequest)
+        {
+            this.DeliverTMUTrafficDataRequest = DeliverTMUTrafficDataRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeliverTMUTrafficDataResponse1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.thalesgroup.com/NTIS/SubscriberService", Order=0)]
+        public SubscriberWebService.DeliverTMUTrafficDataResponse DeliverTMUTrafficDataResponse;
+        
+        public DeliverTMUTrafficDataResponse1()
+        {
+        }
+        
+        public DeliverTMUTrafficDataResponse1(SubscriberWebService.DeliverTMUTrafficDataResponse DeliverTMUTrafficDataResponse)
+        {
+            this.DeliverTMUTrafficDataResponse = DeliverTMUTrafficDataResponse;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface subscriberChannel : SubscriberWebService.IWebServiceSubscriber, System.ServiceModel.IClientChannel
     {
@@ -28448,6 +28544,11 @@ namespace SubscriberWebService
         public SubscriberWebService.DeliverAverageJourneyTimeResponse1 DeliverAverageJourneyTime(SubscriberWebService.DeliverAverageJourneyTimeRequest1 request)
         {
             return base.Channel.DeliverAverageJourneyTime(request);
+        }
+        
+        public SubscriberWebService.DeliverTMUTrafficDataResponse1 DeliverTMUTrafficData(SubscriberWebService.DeliverTMUTrafficDataRequest1 request)
+        {
+            return base.Channel.DeliverTMUTrafficData(request);
         }
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project name="SubscriberService" resourceRoot="" soapui-version="4.5.2" abortOnError="false" runType="SEQUENTIAL" activeEnvironment="Default" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="subscriberSoap11" type="wsdl" bindingName="{http://www.thalesgroup.com/NTIS/SubscriberService}subscriberSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost/SubscriberWebSite/Contract/subscriber.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost/SubscriberWebSite/Contract/subscriber.wsdl"><con:part><con:url>http://localhost/SubscriberWebSite/Contract/subscriber.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.thalesgroup.com/NTIS/SubscriberService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://www.thalesgroup.com/NTIS/SubscriberService" xmlns:sch1="http://datex2.eu/schema/2/2_0" xmlns:sch2="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.thalesgroup.com/NTIS/SubscriberService">
+<con:soapui-project name="SubscriberService" resourceRoot="" soapui-version="4.5.2" abortOnError="false" runType="SEQUENTIAL" activeEnvironment="Default" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="subscriberSoap11" type="wsdl" bindingName="{http://www.thalesgroup.com/NTIS/SubscriberService}subscriberSoap11" soapVersion="1_1" anonymous="optional" definition="C:/work/ntis-dotnet-web-services/SubscriberService/SubscriberWebService/SubscriberWebService/Contract/subscriber.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/work/ntis-dotnet-web-services/SubscriberService/SubscriberWebService/SubscriberWebService/Contract/subscriber.wsdl"><con:part><con:url>file:/C:/work/ntis-dotnet-web-services/SubscriberService/SubscriberWebService/SubscriberWebService/Contract/subscriber.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.thalesgroup.com/NTIS/SubscriberService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://www.thalesgroup.com/NTIS/SubscriberService" xmlns:sch1="http://datex2.eu/schema/2/2_0" xmlns:sch2="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.thalesgroup.com/NTIS/SubscriberService">
   <wsdl:import namespace="http://www.thalesgroup.com/NTIS/SubscriberService" location="subscriber.xsd"/>
   <wsdl:types></wsdl:types>
   <wsdl:message name="DeliverAverageSpeedFvdRequest">
@@ -32,6 +32,12 @@
   <wsdl:message name="DeliverAverageJourneyTimeRequest">
     <wsdl:part element="tns:DeliverAverageJourneyTimeRequest" name="DeliverAverageJourneyTimeRequest"></wsdl:part>
   </wsdl:message>
+  <wsdl:message name="DeliverTMUTrafficDataRequest">
+    <wsdl:part element="tns:DeliverTMUTrafficDataRequest" name="DeliverTMUTrafficDataRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeliverTMUTrafficDataResponse">
+    <wsdl:part element="tns:DeliverTMUTrafficDataResponse" name="DeliverTMUTrafficDataResponse"></wsdl:part>
+  </wsdl:message>
   <wsdl:portType name="subscriber">
     <wsdl:operation name="DeliverAverageSpeedFvd">
       <wsdl:input message="tns:DeliverAverageSpeedFvdRequest" name="DeliverAverageSpeedFvdRequest"></wsdl:input>
@@ -52,6 +58,10 @@
     <wsdl:operation name="DeliverAverageJourneyTime">
       <wsdl:input message="tns:DeliverAverageJourneyTimeRequest" name="DeliverAverageJourneyTimeRequest"></wsdl:input>
       <wsdl:output message="tns:DeliverAverageJourneyTimeResponse" name="DeliverAverageJourneyTimeResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeliverTMUTrafficData">
+      <wsdl:input message="tns:DeliverTMUTrafficDataRequest" name="DeliverTMUTrafficDataRequest"></wsdl:input>
+      <wsdl:output message="tns:DeliverTMUTrafficDataResponse" name="DeliverTMUTrafficDataResponse"></wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="subscriberSoap11" type="tns:subscriber">
@@ -101,21 +111,29 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DeliverTMUTrafficData">
+      <soap:operation soapAction="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverTMUTrafficData"/>
+      <wsdl:input name="DeliverTMUTrafficDataRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeliverTMUTrafficDataResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="subscriberService">
     <wsdl:port binding="tns:subscriberSoap11" name="subscriberSoap11">
       <soap:address location="http://localhost/SubscriberService"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost/SubscriberWebSite/Contract/subscriber.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://www.thalesgroup.com/NTIS/SubscriberService" elementFormDefault="qualified" xmlns:datex2="http://datex2.eu/schema/2/2_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" schemaLocation="DATEXIIProcessedTrafficDataSchemaV0.01.xsd"/>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\work\ntis-dotnet-web-services\SubscriberService\SubscriberWebService\SubscriberWebService\Contract\subscriber.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://www.thalesgroup.com/NTIS/SubscriberService" elementFormDefault="qualified" xmlns:datex2="http://datex2.eu/schema/2/2_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://datex2.eu/schema/2/2_0" schemaLocation="DATEXIISchema_2_2_0withdefinitions.xsd"/>
-  <xs:import namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0" schemaLocation="Datex2_JourneyTimeExtensions_2.xsd"/>
+  <xs:import namespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" schemaLocation="DATEXII_NTISExtensions_1.0Beta1.xsd"/>
   <xs:element name="DeliverAverageSpeedFusedDataRequest">
     <xs:complexType>
-      <xs:all>
-        <xs:element name="D2LogicalModel" type="datex2:D2LogicalModel" minOccurs="1"/>
-      </xs:all>
+      <xs:sequence>
+        <xs:element name="d2LogicalModel" type="datex2:D2LogicalModel" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeliverAverageSpeedFusedDataResponse">
@@ -127,9 +145,9 @@
   </xs:element>
   <xs:element name="DeliverAverageSpeedFvdRequest">
     <xs:complexType>
-      <xs:all>
-        <xs:element name="D2LogicalModel" type="datex2:D2LogicalModel" minOccurs="1"/>
-      </xs:all>
+      <xs:sequence>
+        <xs:element name="d2LogicalModel" type="datex2:D2LogicalModel" minOccurs="1"/>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeliverAverageSpeedFvdResponse">
@@ -155,9 +173,9 @@
   </xs:element>
   <xs:element name="DeliverMIDASTrafficDataRequest">
     <xs:complexType>
-      <xs:all>
-        <xs:element name="D2LogicalModel" type="datex2:D2LogicalModel" minOccurs="1"/>
-      </xs:all>
+      <xs:sequence>
+        <xs:element name="d2LogicalModel" type="datex2:D2LogicalModel" maxOccurs="1" minOccurs="1"/>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeliverMIDASTrafficDataResponse">
@@ -169,9 +187,9 @@
   </xs:element>
   <xs:element name="DeliverANPRTrafficDataRequest">
     <xs:complexType>
-      <xs:all>
-        <xs:element name="D2LogicalModel" type="datex2:D2LogicalModel" minOccurs="1"/>
-      </xs:all>
+      <xs:sequence>
+        <xs:element name="D2LogicalModel" type="datex2:D2LogicalModel" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeliverANPRTrafficDataResponse">
@@ -181,144 +199,21 @@
       </xs:all>
     </xs:complexType>
   </xs:element>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost/SubscriberWebSite/Contract/DATEXIIProcessedTrafficDataSchemaV0.01.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0">
-  <xs:import namespace="http://datex2.eu/schema/2/2_0" schemaLocation="DATEXIISchema_2_2_0withdefinitions.xsd"/>
-  <xs:complexType name="FusedDataPublication">
-    <xs:annotation>
-      <xs:documentation>A collection of FusedData</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="D2LogicalModel:PayloadPublication">
-        <xs:sequence minOccurs="1">
-          <xs:element name="fusedData" type="FusedData" minOccurs="1" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="FusedData">
-    <xs:annotation>
-      <xs:documentation>A publication containing fused traffic data from MIDAS Loops, ANPR cameras and Floating vehicle data</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="markets" type="FusedDataMarket" minOccurs="1" maxOccurs="unbounded"/>
-      <xs:element name="createdUtc" type="D2LogicalModel:DateTime">
-        <xs:annotation>
-          <xs:documentation>UTC date/time the data was made available</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="maxArrivalUtc" type="D2LogicalModel:DateTime">
-        <xs:annotation>
-          <xs:documentation>UTC date/time of the last data point was collected for this fused data</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="latencySec" type="D2LogicalModel:Seconds">
-        <xs:annotation>
-          <xs:documentation>Difference in seconds between the createdUtc and maxArrivalUtc</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="FusedDataMarket">
-    <xs:sequence>
-      <xs:element name="createdLocal" type="D2LogicalModel:DateTime">
-        <xs:annotation>
-          <xs:documentation>Time the record was created</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="tmcs" type="FusedDataTMC" maxOccurs="unbounded" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>List of TMCs in this Market</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="FusedDataTMC">
-    <xs:annotation>
-      <xs:documentation>Fused data record for one TMC</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="journeyTimeSec" type="D2LogicalModel:Seconds" maxOccurs="1" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>Average journey time across the TMC in seconds</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="direction" type="TMCDirectionEnum" maxOccurs="1" minOccurs="1">
-        <xs:annotation>
-          <xs:documentation>The ALERT-C direction code of this TMC</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="code" type="xs:string" maxOccurs="1" minOccurs="1">
-        <xs:annotation>
-          <xs:documentation>The ALERT-C location code of this TMC</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="region" type="xs:string" maxOccurs="1" minOccurs="1">
-        <xs:annotation>
-          <xs:documentation>The ALERT-C region code of the TMC</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="speedSensorOnlyKph" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>The speed on the TMC in kph, based on fusing only the available sensor data</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="country" type="xs:string" maxOccurs="1" minOccurs="1">
-        <xs:annotation>
-          <xs:documentation>ALERT-C country code of the TMC</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="headwayDeciseconds" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>The average headway along the TMC.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="speedKph" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>The speed on the TMC in kph, based on fusing all sensor and FVD data</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="volumeVehiclesPerMin" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>The average volume along the TMC in vehicles per minute.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="speedFvdOnlyKph" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>The speed on the TMC in kph, based on fusing only the available FVD data.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="occupancyPercent" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>The average occupancy along the TMC as a percentage</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:simpleType name="TMCDirectionEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="+">
-        <xs:annotation>
-          <xs:documentation>External path in the positive direction</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="-">
-        <xs:annotation>
-          <xs:documentation>External path in the negative direction</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="P">
-        <xs:annotation>
-          <xs:documentation>Internal path in the positive direction</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="N">
-        <xs:annotation>
-          <xs:documentation>Internal path in the negative direction</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost/SubscriberWebSite/Contract/DATEXIISchema_2_2_0withdefinitions.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0" targetNamespace="http://datex2.eu/schema/2/2_0" xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DeliverTMUTrafficDataRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="d2LogicalModel" type="datex2:D2LogicalModel" maxOccurs="1" minOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeliverTMUTrafficDataResponse">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="status" type="xs:string"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\work\ntis-dotnet-web-services\SubscriberService\SubscriberWebService\SubscriberWebService\Contract\DATEXIISchema_2_2_0withdefinitions.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0" targetNamespace="http://datex2.eu/schema/2/2_0" xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:complexType name="_ExtensionType">
     <xs:sequence>
       <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
@@ -14273,21 +14168,42 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost/SubscriberWebSite/Contract/Datex2_JourneyTimeExtensions_2.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="unqualified" targetNamespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0" xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" xmlns="http://www.thalesgroup.com/NTIS/Datex2Extensions/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\work\ntis-dotnet-web-services\SubscriberService\SubscriberWebService\SubscriberWebService\Contract\DATEXII_NTISExtensions_1.0Beta1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" xmlns="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="DATEXIISchema_2_2_0withdefinitions.xsd" namespace="http://datex2.eu/schema/2/2_0"/>
-  <xs:simpleType name="Guid">
+  <xs:complexType name="JourneyTimePublication">
     <xs:annotation>
-      <xs:documentation>A GUID represented as a character string of length 40.
-		This should be in the standard form for string representation of a GUID (a.k.a UUID),
-		as specified by www.ieft.org/rfc/rfc4122.txt, prefixed by "GUID",
-		e.g. GUIDff4740a5-0690-451a-ac83-04950306d95a
-		Upper or lower case digits are allowed.</xs:documentation>
+      <xs:documentation>A publication containing one or more journey times</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="40"/>
-      <xs:maxLength value="40"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent mixed="false">
+      <xs:extension base="D2LogicalModel:PayloadPublication">
+        <xs:sequence>
+          <xs:element name="headerInformation" type="D2LogicalModel:HeaderInformation"/>
+          <xs:element name="journeyTimes" type="JourneyTimes" minOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FusedDataPublication">
+    <xs:annotation>
+      <xs:documentation>A collection of FusedData</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="D2LogicalModel:PayloadPublication">
+        <xs:sequence>
+          <xs:element name="headerInformation" type="D2LogicalModel:HeaderInformation"/>
+          <xs:element name="fusedData" type="FusedData" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="JourneyTimes">
+    <xs:annotation>
+      <xs:documentation>A sequence of zero or more JourneyTime elements.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="journeyTime" type="JourneyTime"/>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="JourneyTime">
     <xs:sequence>
       <xs:element name="camera1" type="Guid">
@@ -14312,36 +14228,97 @@
       </xs:element>
       <xs:element name="isSuspect" type="xs:boolean">
         <xs:annotation>
-          <xs:documentation>When true, indicates that the data is suspect and may be erroneous (e.g. one of the ANPR stations may be out of time sync.)</xs:documentation>
+          <xs:documentation>When true, indicates that the data is suspect and
+					may be erroneous (e.g. one of the ANPR stations may be out of time
+					sync.)</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="JourneyTimes">
+  <xs:simpleType name="Guid">
     <xs:annotation>
-      <xs:documentation>A sequence of zero or more JourneyTime elements.</xs:documentation>
+      <xs:documentation>A GUID represented as a character string of length 40.
+				This should be in the standard form for string representation of a GUID
+				(a.k.a UUID),
+				as specified by www.ieft.org/rfc/rfc4122.txt, prefixed by "GUID",
+				e.g. GUIDff4740a5-0690-451a-ac83-04950306d95a
+				Upper or lower case digits are allowed.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="32"/>
+      <xs:maxLength value="40"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FusedData">
+    <xs:annotation>
+      <xs:documentation>A publication containing fused traffic data from MIDAS Loops, ANPR cameras and Floating vehicle data</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="journeyTime" type="JourneyTime"/>
+      <xs:element name="linkData" type="ProcessedTrafficData" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="createdUtc" type="D2LogicalModel:DateTime">
+        <xs:annotation>
+          <xs:documentation>UTC date/time the data was made available</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="maxArrivalUtc" type="D2LogicalModel:DateTime">
+        <xs:annotation>
+          <xs:documentation>UTC date/time of the last data point was collected for this fused data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="JourneyTimePublication">
+  <xs:complexType name="ProcessedTrafficData">
     <xs:annotation>
-      <xs:documentation>A publication containing one or more journey times</xs:documentation>
+      <xs:documentation>Fused data record for one Network Link</xs:documentation>
     </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="D2LogicalModel:PayloadPublication">
-        <xs:sequence minOccurs="1">
-          <xs:element name="journeyTimes" type="JourneyTimes"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
+    <xs:sequence>
+      <xs:element name="networkLinkId" type="D2LogicalModel:LocationByReference" maxOccurs="1" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Reference to the NTIS Network Link Id to which the following data applies</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="journeyTimeSec" type="D2LogicalModel:Seconds" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Average journey time across the Network Link in seconds</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="speedSensorOnlyKph" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The speed on the Network Link in kph, based on fusing only the available sensor data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="headwayDeciseconds" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The average headway along the Network Link.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="speedKph" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The speed on the Network Link in kph, based on fusing all sensor and FVD data</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="volumeVehiclesPerMin" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The average volume along the Network Link in vehicles per minute.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="speedFvdOnlyKph" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The speed on the Network Link in kph, based on fusing only the available FVD data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="occupancyPercent" type="D2LogicalModel:Float" maxOccurs="1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The average occupancy along the Network Link as a percentage</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost/WebServiceSubscriber.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverANPRTrafficData" name="DeliverANPRTrafficData" bindingOperationName="DeliverANPRTrafficData" type="Request-Response" outputName="DeliverANPRTrafficDataResponse" inputName="DeliverANPRTrafficDataRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/WebServiceSubscriber.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://www.thalesgroup.com/NTIS/SubscriberService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost/WebServiceSubscriber.svc</con:endpoint><con:endpoint>http://localhost/SubscriberService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverANPRTrafficData" name="DeliverANPRTrafficData" bindingOperationName="DeliverANPRTrafficData" type="Request-Response" outputName="DeliverANPRTrafficDataResponse" inputName="DeliverANPRTrafficDataRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/WebServiceSubscriber.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://www.thalesgroup.com/NTIS/SubscriberService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
    <soapenv:Header/>
    <soapenv:Body>
       <DeliverANPRTrafficDataRequest>
-         <d2LogicalModel xmlns:ns2="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" xmlns:ns3="http://datex2.eu/schema/2/2_0">
+         <D2LogicalModel xmlns:ns2="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1" xmlns:ns3="http://datex2.eu/schema/2/2_0">
             <ns3:exchange>
                <ns3:supplierIdentification>
                   <ns3:country>gb</ns3:country>
@@ -33661,21 +33638,21 @@
                   </ns2:journeyTime>
                </ns2:journeyTimes>
             </ns3:payloadPublication>
-         </d2LogicalModel>
+         </D2LogicalModel>
       </DeliverANPRTrafficDataRequest>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverANPRTrafficData"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageJourneyTime" name="DeliverAverageJourneyTime" bindingOperationName="DeliverAverageJourneyTime" type="Request-Response" outputName="DeliverAverageJourneyTimeResponse" inputName="DeliverAverageJourneyTimeRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/WebServiceSubscriber.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sub="http://www.thalesgroup.com/NTIS/SubscriberService" xmlns:_0="http://datex2.eu/schema/2/2_0">
    <soapenv:Header/>
    <soapenv:Body>
       <sub:DeliverAverageJourneyTimeRequest>
-         <sub:d2LogicalModel modelBaseVersion="2">
+         <sub:D2LogicalModel modelBaseVersion="2">
             <_0:exchange>
                <_0:supplierIdentification>
                   <_0:country>gb</_0:country>
                   <_0:nationalIdentifier>gb</_0:nationalIdentifier>
 	       </_0:supplierIdentification>
             </_0:exchange>
-         </sub:d2LogicalModel>
+         </sub:D2LogicalModel>
       </sub:DeliverAverageJourneyTimeRequest>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageJourneyTime"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverAverageSpeedFusedData" name="DeliverAverageSpeedFusedData" bindingOperationName="DeliverAverageSpeedFusedData" type="Request-Response" outputName="DeliverAverageSpeedFusedDataResponse" inputName="DeliverAverageSpeedFusedDataRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/WebServiceSubscriber.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sub="http://www.thalesgroup.com/NTIS/SubscriberService" xmlns:_0="http://datex2.eu/schema/2/2_0">
@@ -69273,4 +69250,146 @@
          </d2LogicalModel>
       </DeliverMIDASTrafficDataRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverMIDASTrafficData"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverMIDASTrafficData"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverTMUTrafficData" name="DeliverTMUTrafficData" bindingOperationName="DeliverTMUTrafficData" type="Request-Response" outputName="DeliverTMUTrafficDataResponse" inputName="DeliverTMUTrafficDataRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/WebServiceSubscriber.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:ns3="http://datex2.eu/schema/2/2_0" xmlns:sub="http://www.thalesgroup.com/NTIS/SubscriberService"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header />
+  <soapenv:Body>
+    <p:DeliverTMUTrafficDataRequest xmlns:d2lm="http://datex2.eu/schema/2/2_0" xmlns:p="http://www.thalesgroup.com/NTIS/SubscriberService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thalesgroup.com/NTIS/SubscriberService subscriber.xsd ">
+	<p:d2LogicalModel xmlns:ns2="http://datex2.eu/schema/2/2_0" xmlns:ns3="http://www.thalesgroup.com/NTIS/Datex2Extensions/1.0Beta1"
+		modelBaseVersion="2">
+		<ns2:exchange>
+			<ns2:supplierIdentification>
+				<ns2:country>gb</ns2:country>
+				<ns2:nationalIdentifier>NTIS DATEX II TMU Data
+			</ns2:nationalIdentifier>
+			</ns2:supplierIdentification>
+		</ns2:exchange>
+		<ns2:payloadPublication lang="en"
+			xsi:type="ns2:MeasuredDataPublication" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<ns2:feedDescription>
+				<ns2:values>
+					<ns2:value>NTIS DATEX II TMU Data</ns2:value>
+				</ns2:values>
+			</ns2:feedDescription>
+			<ns2:feedType>TMU Data</ns2:feedType>
+			<ns2:publicationTime>2012-10-26T09:23:00.037+01:00
+		</ns2:publicationTime>
+			<ns2:publicationCreator>
+				<ns2:country>gb</ns2:country>
+				<ns2:nationalIdentifier>NTIS DATEX II TMU Data
+			</ns2:nationalIdentifier>
+			</ns2:publicationCreator>
+			<ns2:measurementSiteTableReference
+				targetClass="MeasurementSiteTable" id="" version="1" />
+			<ns2:headerInformation>
+				<ns2:confidentiality>restrictedToAuthoritiesTrafficOperatorsAndPublishers</ns2:confidentiality>
+				<ns2:informationStatus>real</ns2:informationStatus>
+				<ns2:urgency>normalUrgency</ns2:urgency>
+			</ns2:headerInformation>
+			<ns2:siteMeasurements>
+				<ns2:measurementSiteReference
+					targetClass="MeasurementSiteRecord" version=""
+					id="C6E971CACAD3789BE0433CC411ACCCEA" />
+				<ns2:measurementTimeDefault>2012-04-12T11:02:00.000+01:00</ns2:measurementTimeDefault>
+				<ns2:measuredValue index="0">
+					<ns2:measuredValue>
+						<ns2:basicData xsi:type="ns2:TrafficSpeed">
+							<ns2:averageVehicleSpeed>
+								<ns2:speed>10.0</ns2:speed>
+							</ns2:averageVehicleSpeed>
+						</ns2:basicData>
+					</ns2:measuredValue>
+				</ns2:measuredValue>
+				<ns2:measuredValue index="1">
+					<ns2:measuredValue>
+						<ns2:basicData xsi:type="ns2:TrafficFlow">
+							<ns2:forVehiclesWithCharacteristicsOf>
+								<ns2:lengthCharacteristic>
+									<ns2:comparisonOperator>greaterThan</ns2:comparisonOperator>
+									<ns2:vehicleLength>5.2</ns2:vehicleLength>
+								</ns2:lengthCharacteristic>
+							</ns2:forVehiclesWithCharacteristicsOf>
+							<ns2:vehicleFlow>
+								<ns2:vehicleFlowRate>960</ns2:vehicleFlowRate>
+							</ns2:vehicleFlow>
+						</ns2:basicData>
+					</ns2:measuredValue>
+				</ns2:measuredValue>
+				<ns2:measuredValue index="2">
+					<ns2:measuredValue>
+						<ns2:basicData xsi:type="ns2:TrafficFlow">
+							<ns2:forVehiclesWithCharacteristicsOf>
+								<ns2:lengthCharacteristic>
+									<ns2:comparisonOperator>greaterThan</ns2:comparisonOperator>
+									<ns2:vehicleLength>5.2</ns2:vehicleLength>
+								</ns2:lengthCharacteristic>
+								<ns2:lengthCharacteristic>
+									<ns2:comparisonOperator>lessThanOrEqualTo</ns2:comparisonOperator>
+									<ns2:vehicleLength>6.6</ns2:vehicleLength>
+								</ns2:lengthCharacteristic>
+							</ns2:forVehiclesWithCharacteristicsOf>
+							<ns2:vehicleFlow>
+								<ns2:vehicleFlowRate>1080</ns2:vehicleFlowRate>
+							</ns2:vehicleFlow>
+						</ns2:basicData>
+					</ns2:measuredValue>
+				</ns2:measuredValue>
+				<ns2:measuredValue index="3">
+					<ns2:measuredValue>
+						<ns2:basicData xsi:type="ns2:TrafficFlow">
+							<ns2:forVehiclesWithCharacteristicsOf>
+								<ns2:lengthCharacteristic>
+									<ns2:comparisonOperator>greaterThan</ns2:comparisonOperator>
+									<ns2:vehicleLength>6.6</ns2:vehicleLength>
+								</ns2:lengthCharacteristic>
+								<ns2:lengthCharacteristic>
+									<ns2:comparisonOperator>lessThanOrEqualTo</ns2:comparisonOperator>
+									<ns2:vehicleLength>11.6</ns2:vehicleLength>
+								</ns2:lengthCharacteristic>
+							</ns2:forVehiclesWithCharacteristicsOf>
+							<ns2:vehicleFlow>
+								<ns2:vehicleFlowRate>1140</ns2:vehicleFlowRate>
+							</ns2:vehicleFlow>
+						</ns2:basicData>
+					</ns2:measuredValue>
+				</ns2:measuredValue>
+				<ns2:measuredValue index="4">
+					<ns2:measuredValue>
+						<ns2:basicData xsi:type="ns2:TrafficFlow">
+							<ns2:forVehiclesWithCharacteristicsOf>
+								<ns2:lengthCharacteristic>
+									<ns2:comparisonOperator>greaterThan</ns2:comparisonOperator>
+									<ns2:vehicleLength>11.6</ns2:vehicleLength>
+								</ns2:lengthCharacteristic>
+							</ns2:forVehiclesWithCharacteristicsOf>
+							<ns2:vehicleFlow>
+								<ns2:vehicleFlowRate>1200</ns2:vehicleFlowRate>
+							</ns2:vehicleFlow>
+						</ns2:basicData>
+					</ns2:measuredValue>
+				</ns2:measuredValue>
+				<ns2:measuredValue index="5">
+					<ns2:measuredValue>
+						<ns2:basicData xsi:type="ns2:TrafficHeadway">
+							<ns2:averageTimeHeadway>
+								<ns2:duration>25.0</ns2:duration>
+							</ns2:averageTimeHeadway>
+						</ns2:basicData>
+					</ns2:measuredValue>
+				</ns2:measuredValue>
+				<ns2:measuredValue index="6">
+					<ns2:measuredValue>
+						<ns2:basicData xsi:type="ns2:TrafficConcentration">
+							<ns2:occupancy>
+								<ns2:percentage>16.0</ns2:percentage>
+							</ns2:occupancy>
+						</ns2:basicData>
+					</ns2:measuredValue>
+				</ns2:measuredValue>
+			</ns2:siteMeasurements>
+		</ns2:payloadPublication>
+	</p:d2LogicalModel>
+</p:DeliverTMUTrafficDataRequest>
+  </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.thalesgroup.com/NTIS/SubscriberService/DeliverTMUTrafficData"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>

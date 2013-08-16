@@ -54,6 +54,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubscriberServiceTest.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SubscriberWebService\SubscriberWebService.csproj">
+      <Project>{d65c27c5-0b32-46f2-96b0-d2b0c6ccc919}</Project>
+      <Name>SubscriberWebService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

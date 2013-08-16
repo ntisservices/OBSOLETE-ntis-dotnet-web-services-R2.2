@@ -64,7 +64,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebServiceSubscriber.svc" />
   </ItemGroup>
   <ItemGroup>
@@ -80,7 +82,9 @@
     <Compile Include="Services\IAverageSpeedFusedData.cs" />
     <Compile Include="Services\IAverageSpeedFvdService.cs" />
     <Compile Include="Services\IMidasTrafficDataService.cs" />
+    <Compile Include="Services\ITMUTrafficDataService.cs" />
     <Compile Include="Services\MidasTrafficDataService.cs" />
+    <Compile Include="Services\TMUTrafficDataService.cs" />
     <Compile Include="Services\TrafficData.cs" />
     <Compile Include="WebServiceSubscriber.cs" />
   </ItemGroup>
