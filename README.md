@@ -12,7 +12,7 @@ Building and testing the website
 ### Testing
 
 You will be able to launch the webservice from within the visual studio debugger. This will allow you to verify that the solution builds, and that there are no configuration issues.
-Once the service is running, you can verifiy it's operation by using either the SoapUI example test project located in \SubscriberService\SoapUI Tests or by using the included test client located in \TestClient
+Once the service is running, you can verify it's operation by using either the SoapUI example test project located in \SubscriberService\SoapUI Tests or by using the included test client located in \TestClient
 
 ### Deploying the webservice on IIS 5
 
