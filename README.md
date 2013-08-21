@@ -1,23 +1,18 @@
 NTIS Subscriber Service - README
 ================================
 
-This project is an example implementation of the NTIS Subscriber Service that uses the .NET 3.5 framework and the C# language.
-You can import the project into Visual Studio 2008 (which is what it was created in), and tailor it to suit your needs. The solution can also be imported into Visual Studio 2010, during which you will be prompted with instructions to convert it to use the .NET 4.0 framework.
+This project is an example implementation of the NTIS Subscriber Service.
+It has been created in Visual Studio 2012, and uses the 4.5 version of the .NET framework.
 
-The SubscriberWebService web site in the solution, is of the type "ASP.NET Web Service".
-
+The example service has been created using WCF and small changes may be required in order to use it on older versions of the .NET framework.
 
 Building and testing the website 
 ----------------------------------------------------------------
 
-### Building
+### Testing
 
-The ASP.NET Web Service Application has been developed and build in Visual Studio 2008. On running the application, you should be able to navigate to http://localhost:<portNumber>/SubscriberService.asmx, where <portNumber> can be an auto-generated port number, or hard coded.
-
-After IIS has been installed, the following can be done:
-
-1) After testing that the project works successully in Visual Project, within Visual Studio, right click on the web service website in Solution Explorer, and select "Publish".
-2) In the "Publish Web" dialogue box that appears, enter a Target location. (e.g: C:\SubscriberWebSite), leave the default settings of "Replace matching files with local copies", "Only files needed to run this application", and leave "Include files from the App_Data folder" checked.
+You will be able to launch the webservice from within the visual studio debugger. This will allow you to verify that the solution builds, and that there are no configuration issues.
+Once the service is running, you can verifiy it's operation by using either the SoapUI example test project located in \SubscriberService\SoapUI Tests or by using the included test client located in \TestClient
 
 ### Deploying the webservice on IIS 5
 
@@ -32,11 +27,6 @@ Instructions are as follows:
 7) Enter or browse to the directory containing the published content (e.g. C:\SubscriberWebSite) and click "Next".
 8) Leave the default settings checked for "Read" and "Run scripts (such as ASP)", and click "Next".
 9) Click "Finish".
-10) Open a browser window, and enter "http://localhost/SubscriberWebservice/Contract/subscriber.wsdl" as the URL. Note that the Microsoft generated WSDL has been disabled in this project in favour of the real one.
-11) The "Subscriber Service" web page should appear.
-12) Click on the "service description" link to see the .NET generated WSDL page.
-14) Click on the browser back button, and click on any of the operations to see the formats and data types of the request and response over different protocols.
-
 
 ### Deploying on Windows 7 using IIS 7
 
@@ -57,7 +47,7 @@ SoapUI is an open source cross-platform tool which can be used for testing SOAP 
 1) Make sure that the Subscriber web service is running.
 2) Start soapUI.
 3) From the main menu select File -> New soapUI Project.
-4) Enter a Project Name, browse to the WSDL or manually enter the location. e.g. http://SubscriberWebSite/SubscriberService.asmx?wsdl, then press "OK".
+4) Enter a Project Name, browse to the WSDL or manually enter the location. e.g. http://localhost/contract/subscriber.wsdl, then press "OK".
 5) The service and methods will then be exposed.
 6) Modify any of the requests and enter suitable values, or copy any of the example messages provided in the "exampleRequests" folder, which match the message to be tested, and paste over the contents of the "Request 1" sample generated.
 7) Press the green play arrow at the top of the request and check that a success response is sent.
